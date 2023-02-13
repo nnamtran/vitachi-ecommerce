@@ -1,8 +1,11 @@
 .all-products-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     width: 65vw;
+    padding-top: 10vh;
+    border-top: 1px solid #0b0b0b3f;
 }
 
 .all-heading {
@@ -11,12 +14,14 @@
     padding: 5% 10% 3%;
     margin-bottom: 3%;
     border-bottom: 1px solid #59595951;
+    z-index: 100;
+    text-align: center;
 }
 
 .card-in-all {
     margin: 0 5px;
     width: 20vw;
-    height: 65vh;
+    height: 75vh;
     border-radius: 0;
     margin-bottom: 5%;
     border: none;
@@ -28,6 +33,76 @@
 }
 
 .card-in-all .price {
-    font-size: 32px;
+    font-size: 22px;
     line-height: 1.5em;
+}
+
+.babycare-video-container {
+    width: 55vw;
+    height: 70vh;
+    margin-bottom: 10vh;
+    overflow: hidden;
+}
+
+.babycare-video-container .cover-div {
+    position: absolute;
+    width: 55vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.babycare-video-container img {
+    width: 100%;
+    height: 100%;
+    filter: contrast(70%);
+}
+
+.babycare-video-container .baby-heading {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: none;
+    filter: drop-shadow(0px 10px 4px rgb(206, 118, 118));
+}
+
+.babycare-video-container .pregnancy-heading {
+    font-size: 60px;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: none;
+    filter: drop-shadow(0px 10px 4px rgb(190, 34, 211));
+}
+
+.babycare-video-container .vitamin-heading {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: none;
+    filter: drop-shadow(0px 10px 4px #29caa4);
+}
+
+.babycare-video-container .beauty-heading {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: none;
+    filter: drop-shadow(0px 10px 4px #fb1ae5);
+}
+
+.babycare-video-container .elder-heading {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: none;
+    filter: drop-shadow(0px 10px 4px #586166);
+}
+
+.babycare-video-container .men-heading {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: none;
+    filter: drop-shadow(0px 10px 4px #272bf8);
 }

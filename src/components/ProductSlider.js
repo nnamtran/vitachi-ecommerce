@@ -15,8 +15,8 @@ const ProductSlider = (props) => {
         <div className={props.class ? 'card card-in-all' : 'card card-in-landingpage'}>
             <img 
                 className="product--image"
-                src={`data:image/png;base64,${props.image}`}
-                alt="product"
+                src={props.image}
+                alt="products"
             />
             <p className="product-name">{props.name}</p>
             <p className="price">{props.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}đ</p>

@@ -5,15 +5,15 @@ const Nav = (props) => {
     const [open, setOpen] = useState(false);
     const [cartItems, setCartItems] = useState();
     const [removeItem, setRemoveItem] = useState();
-    const [total, setTotal] = useState(0);
+    //const [total, setTotal] = useState(0);
     const viewCart = () => {
         setOpen(true);
         let cartItems = JSON.parse(localStorage.getItem('cart'));
         setCartItems(cartItems) 
-        let sum = 0;
-        cartItems.forEach(item => sum += parseInt(item.price) * item.quantity);
-        console.log(sum)
-        setTotal(sum)
+        // let sum = 0;
+        // cartItems.forEach(item => sum += parseInt(item.price) * item.quantity);
+        // console.log(sum)
+        // setTotal(sum)
     }
 
     const closeCart = () => {
@@ -24,10 +24,9 @@ const Nav = (props) => {
         console.log(removeItem);
         let cartItems = JSON.parse(localStorage.getItem('cart'));
         let temp = cartItems.filter(item => item.name !== removeItem);
-        let newTotal = 0
-        temp.forEach(item => newTotal += parseInt(item.price) * item.quantity);
-        //console.log(newTotal)
-        setTotal(newTotal)
+        // let newTotal = 0
+        // temp.forEach(item => newTotal += parseInt(item.price) * item.quantity);
+        // setTotal(newTotal)
         setCartItems(temp)
         localStorage.setItem('cart', JSON.stringify(temp));
     }
@@ -91,7 +90,7 @@ const Nav = (props) => {
                                                 <div className="item-column3">
                                                     <img 
                                                         className="cart-image"
-                                                        src={`data:image/png;base64,${item.image}`}
+                                                        src={item.image}
                                                         alt="product"
                                                     />
                                                     </div>
@@ -105,8 +104,9 @@ const Nav = (props) => {
                                                             props.itemWithQuantity.map(el => {
                                                                 if (el.name === item.name && el.quantity !== 0) {
                                                                     return (    
-                                                                        <div unselectable="on" className="quantity">{el.quantity}</div>
-                                                                        
+                                                                        <div 
+                                                                        key={item.name}unselectable="on" className="quantity">{el.quantity}
+                                                                        </div>
                                                                     )
                                                                 } else if (el.name === props.name && el.quantity === 1){
                                                                     return null

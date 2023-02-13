@@ -76,14 +76,14 @@ const Products = (props) => {
         try {
             const response = await axios.get('https://vitachi-ecommerce-backend.herokuapp.com/landingpage')
 
-            setVitamins(response.data.vitamins);
-            setWomen(response.data.women);
-            setElderly(response.data.elderly);
-            setBaby(response.data.baby);
-            setMen(response.data.men);
-            setPregnancy(response.data.pregnancy);
+            setVitamins(response.data[0].vitamins);
+            setWomen(response.data[0].women);
+            setElderly(response.data[0].elderly);
+            setBaby(response.data[0].baby);
+            setMen(response.data[0].men);
+            setPregnancy(response.data[0].pregnancy);
 
-            //console.log(response.data['vitamins'])
+            console.log(response.data[0])
         } catch (error) {
             console.log(error)
         }
@@ -135,7 +135,8 @@ const Products = (props) => {
             key={item.category} 
             name={item.product_name} 
             price={item.price} 
-            image={item.image.data.buffer}/>
+            image={item.imageUrl}
+            />
     ))
 
     const vitamin = vitamins.map((item) => (
@@ -147,7 +148,8 @@ const Products = (props) => {
             key={item.category} 
             name={item.product_name} 
             price={item.price} 
-            image={item.image.data.buffer}/>
+            image={item.imageUrl}
+        />
     ))
 
     const pregnancyProducts = pregnancy.map((item) => (
@@ -159,7 +161,8 @@ const Products = (props) => {
             key={item.category} 
             name={item.product_name} 
             price={item.price} 
-            image={item.image.data.buffer}/>
+            image={item.imageUrl}
+            />
     ))
 
     const womenProducts = women.map((item) => (
@@ -171,10 +174,9 @@ const Products = (props) => {
             key={item.category} 
             name={item.product_name} 
             price={item.price} 
-            image={item.image.data.buffer}/>
+            image={item.imageUrl}
+            />
     ))
-
-    
 
     const menProducts = men.map((item) => (
         <ProductSlider 
@@ -185,7 +187,8 @@ const Products = (props) => {
             key={item.category} 
             name={item.product_name} 
             price={item.price} 
-            image={item.image.data.buffer}/>
+            image={item.imageUrl}
+            />
     ))
 
     const elderlyProducts = elderly.map((item) => (
@@ -197,7 +200,8 @@ const Products = (props) => {
             key={item.category} 
             name={item.product_name} 
             price={item.price} 
-            image={item.image.data.buffer}/>
+            image={item.imageUrl}
+            />
     ))
 
     return (
